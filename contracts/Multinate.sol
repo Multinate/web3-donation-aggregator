@@ -25,18 +25,42 @@ contract Multinate {
         minimumAttestationScore = _minimumAttestationScore;
     }
 
-    constructor(address _attestation) {
-        attestationStation = IAttestationStation(_attestation);
+    function calculateRegistrationScore(bytes memory _registrationData) internal pure returns (uint256) {
+        // Check if registration data is available
+        if (_registrationData.length > 0) {
+            // In this example, we assign 25 points for having registration data
+            return 25;
+        }
+        return 0;
     }
 
-    function getAttestation(address _creator, address _about, bytes32 _key) public view returns (bytes memory) {
-        return attestationStation.attestations(_creator, _about, _key);
+    function calculateTaxExemptStatusScore(bytes memory _taxExemptStatusData) internal pure returns (uint256) {
+        // Check if tax-exempt status data is available
+        if (_taxExemptStatusData.length > 0) {
+            // In this example, we assign 25 points for having tax-exempt status data
+            return 25;
+        }
+        return 0;
     }
 
-    // Check attestation and create a campaign
-    function createCampaign(address _creator, address _about, bytes32 _key, bytes memory _val) public {
-        bytes memory attestation = getAttestation(_creator, _about, _key);
-        require(keccak256(attestation) == keccak256(_val), "Multinate: Attestation does not match");
-        // Create campaign
+    function calculateFinancialStatementsScore(bytes memory _financialStatementsData) internal pure returns (uint256) {
+        // Check if financial statements data is available
+        if (_financialStatementsData.length > 0) {
+            // In this example, we assign a score between 0 and 25 based on the financial transparency level
+            // (e.g., percentage of funds spent on the mission, administrative costs, etc.)
+            uint8 transparencyLevel = uint8(_financialStatementsData[0]);
+            return (transparencyLevel * 25) / 100;
+        }
+        return 0;
+    }
+
+    function calculateMissionStatementScore(bytes memory _missionStatementData) internal pure returns (uint256) {
+        // Check if mission statement data is available
+        if (_missionStatementData.length > 0) {
+            // In this example, we assign a score between 0 and 25 based on the mission's alignment with global goals (e.g., UN SDGs)
+            uint8 alignmentScore = uint8(_missionStatementData[0]);
+            return (alignmentScore * 25) / 100;
+        }
+        return 0;
     }
 }
