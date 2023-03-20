@@ -25,6 +25,39 @@ contract Multinate {
         minimumAttestationScore = _minimumAttestationScore;
     }
 
+    function updateCharityScore(address _charity) external {
+        uint256 score = 0;
+
+        // Add a scoring system based on the attestation data
+        bytes memory registrationData = attestationStation.attestations(msg.sender, _charity, REGISTRATION_KEY);
+        score += calculateRegistrationScore(registrationData);
+
+        bytes memory taxExemptStatusData = attestationStation.attestations(msg.sender, _charity, TAX_EXEMPT_STATUS_KEY);
+        score += calculateTaxExemptStatusScore(taxExemptStatusData);
+
+        bytes memory financialStatementsData = attestationStation.attestations(
+            msg.sender,
+            _charity,
+            FINANCIAL_STATEMENTS_KEY
+        );
+        score += calculateFinancialStatementsScore(financialStatementsData);
+
+        bytes memory missionStatementData = attestationStation.attestations(
+            msg.sender,
+            _charity,
+            MISSION_STATEMENT_KEY
+        );
+        score += calculateMissionStatementScore(missionStatementData);
+
+        charityScores[_charity] = score;
+        bool isEligible = score >= minimumAttestationScore;
+        emit CharityEligibilityUpdated(_charity, isEligible);
+    }
+
+    function isCharityEligible(address _charity) public view returns (bool) {
+        return charityScores[_charity] >= minimumAttestationScore;
+    }
+
     function calculateRegistrationScore(bytes memory _registrationData) internal pure returns (uint256) {
         // Check if registration data is available
         if (_registrationData.length > 0) {
