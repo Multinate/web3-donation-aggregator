@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@chainlink/contracts": "^0.6.1",
+    "@eth-optimism/contracts-bedrock": "^0.13.1",
     "@ethersproject/hardware-wallets": "^5.7.0",
     "@graphprotocol/graph-cli": "^0.37.7",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
