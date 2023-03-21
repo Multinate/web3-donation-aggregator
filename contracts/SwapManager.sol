@@ -26,12 +26,16 @@ contract SwapManager {
         if (_token != usdcToken) {
             swap(_token, _amount);
         }
+
+        // TODO: Call Hyperlane to bridge USDC to Optimism
     }
 
     function donateETH() external payable {
         require(msg.value > 0, "No ETH received");
         emit DonationReceived(msg.sender, address(0), msg.value);
         swapETH(msg.value);
+
+        // TODO: Call Hyperlane to bridge USDC to Optimism
     }
 
     function swap(address _token, uint256 _amount) private {
