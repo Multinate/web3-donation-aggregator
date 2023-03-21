@@ -44,7 +44,7 @@ The attestation contract should provide a function for anyone to query the legit
 
 ### Architecture
 
-![](relative/path/to/Multinate.png)
+![](Multinate.png)
 
 ## Technologies
 
