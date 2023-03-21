@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 import { ethers } from 'hardhat';
-import { AttestationStation } from '../typechain';
+import { AttestationStation, MockUSDC } from '../typechain';
 
 module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
   const { deploy } = deployments;
@@ -9,13 +9,19 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
 
   // Get the deployed attestation contract
   const attestation: AttestationStation = await deployments.get('AttestationStation');
+  // Get the deployed USDC contract
+  const usdc: MockUSDC = await deployments.get('MockUSDC');
 
   // Set minimum score for attestation
   const minScore = 50;
+
+  // Gnosis safe address
+  const gnosisSafe = '0x9f24e4bc9c4f609706a14ea154b4504c02889c97';
+
   // Deploy Multinate contract
   const multinate = await deploy('Multinate', {
     from: deployer,
-    args: [attestation.address, minScore],
+    args: [attestation.address, minScore, gnosisSafe, usdc.address],
     log: true,
   });
 };
