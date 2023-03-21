@@ -2,10 +2,13 @@
 pragma solidity 0.8.15;
 
 import "./interfaces/IAttestationStation.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "hardhat/console.sol";
 
-contract Multinate {
+contract Multinate is Ownable {
     IAttestationStation public attestationStation;
+    IERC20 public usdc;
     uint256 public minimumAttestationScore;
 
     bytes32 public constant REGISTRATION_KEY = keccak256("registration");
@@ -32,14 +35,17 @@ contract Multinate {
         uint256 indexed campaignId,
         address indexed charity,
         string title,
+        string description,
         uint256 targetAmount,
         uint256 deadline
     );
     event CharityEligibilityUpdated(address indexed charity, bool eligible);
 
-    constructor(address _attestationStation, uint256 _minimumAttestationScore) {
+    constructor(address _attestationStation, uint256 _minimumAttestationScore, address _gnosisSafe, address _usdc) {
         attestationStation = IAttestationStation(_attestationStation);
         minimumAttestationScore = _minimumAttestationScore;
+        usdc = IERC20(_usdc);
+        transferOwnership(_gnosisSafe);
     }
 
     function setMinimumAttestationScore(uint256 _minimumAttestationScore) external {
@@ -119,12 +125,13 @@ contract Multinate {
     }
 
     function createCampaign(
+        address _charity,
         string memory _title,
         string memory _description,
         uint256 _targetAmount,
         uint256 _deadline
-    ) external {
-        require(isCharityEligible(msg.sender), "The charity organization is not eligible");
+    ) external onlyOwner {
+        require(isCharityEligible(_charity), "The charity organization is not eligible");
         require(_deadline > block.timestamp, "Deadline must be in the future");
         require(_targetAmount > 0, "Target amount must be greater than zero");
 
@@ -132,7 +139,7 @@ contract Multinate {
         nextCampaignId++;
 
         campaigns[campaignId] = Campaign({
-            charity: payable(msg.sender),
+            charity: payable(_charity),
             title: _title,
             description: _description,
             targetAmount: _targetAmount,
@@ -141,6 +148,18 @@ contract Multinate {
             active: true
         });
 
-        emit CampaignCreated(campaignId, msg.sender, _title, _targetAmount, _deadline);
+        emit CampaignCreated(campaignId, _charity, _title, _description, _targetAmount, _deadline);
+    }
+
+    // Withdraw funds from the campaign
+    function withdraw(uint256 _campaignId) external {
+        Campaign storage campaign = campaigns[_campaignId];
+        require(campaign.active, "Campaign is not active");
+        require(campaign.charity == msg.sender, "Only the charity can withdraw funds");
+        require(campaign.currentAmount >= campaign.targetAmount, "Target amount not reached");
+        require(campaign.deadline < block.timestamp, "Deadline has not passed yet");
+
+        campaign.active = false;
+        usdc.transfer(campaign.charity, campaign.currentAmount);
     }
 }
