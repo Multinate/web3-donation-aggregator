@@ -4,7 +4,12 @@ Multinate is a web-based application that enables charity organizations to creat
 
 ## Features
 
-- Support for multiple blockchains
+- Support for multiple blockchains:
+Gnosis Testnet
+Optimism Testnet
+Scroll Alpha Testnet
+Goerli Testnet
+Mumbai Testnet
 - Secure fundraising proposals via Snapshot
 - Validation of proposals via Optimism's attestation contract
 - Verification of charity organization's credibility
@@ -36,6 +41,10 @@ Based on the attestation results stored in the smart contract, the contract will
 ### Public verification
 
 The attestation contract should provide a function for anyone to query the legitimacy of a charity organization based on their Ethereum address. This will make it easy for donors to verify if an organization has gone through the attestation process and if they meet the criteria for raising the desired amount.
+
+### Architecture
+
+![](relative/path/to/Multinate.png)
 
 ## Technologies
 
