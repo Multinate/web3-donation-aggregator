@@ -13,6 +13,12 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
     log: true,
     args: [],
   });
+
+  await deploy('MockERC20', {
+    from: deployer,
+    log: true,
+    args: [],
+  });
 };
 
 module.exports.tags = ['Mock'];
