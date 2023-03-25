@@ -40,6 +40,7 @@ contract Multinate is Ownable {
         uint256 deadline
     );
     event CharityEligibilityUpdated(address indexed charity, bool eligible);
+    event CampaignFunded(uint256 indexed campaignId, uint256 amount);
 
     constructor(address _attestationStation, uint256 _minimumAttestationScore, address _gnosisSafe, address _usdc) {
         attestationStation = IAttestationStation(_attestationStation);
@@ -68,14 +69,12 @@ contract Multinate is Ownable {
             FINANCIAL_STATEMENTS_KEY
         );
         score += calculateFinancialStatementsScore(financialStatementsData);
-        console.log("score after financial statement: %s", score);
         bytes memory missionStatementData = attestationStation.attestations(
             msg.sender,
             _charity,
             MISSION_STATEMENT_KEY
         );
         score += calculateMissionStatementScore(missionStatementData);
-        console.log("score after mission statement: %s", score);
         charityScores[_charity] = score;
         bool isEligible = score >= minimumAttestationScore;
         emit CharityEligibilityUpdated(_charity, isEligible);
@@ -161,5 +160,7 @@ contract Multinate is Ownable {
 
         campaign.active = false;
         usdc.transfer(campaign.charity, campaign.currentAmount);
+        // Emit event
+        emit CampaignFunded(_campaignId, campaign.currentAmount);
     }
 }

@@ -3,10 +3,10 @@ pragma solidity 0.8.11;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract MockUSDC is ERC20 {
+contract MockERC20 is ERC20 {
     event Minted(address to, uint256 amount);
 
-    constructor() ERC20("USDC", "USDC") {}
+    constructor() ERC20("Mock ERC20", "mERC20") {}
 
     /**
      * @notice  Burn `amount` tokens and decreasing the total supply.
