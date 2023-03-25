@@ -8,23 +8,11 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
   const { deployer } = await getNamedAccounts();
   const chainId = await getChainId();
 
-  await deploy('MockUSDC', {
+  await deploy('PancakeFactory', {
     from: deployer,
     log: true,
-    args: [],
-  });
-
-  await deploy('MockERC20', {
-    from: deployer,
-    log: true,
-    args: [],
-  });
-
-  await deploy('MockWETH', {
-    from: deployer,
-    log: true,
-    args: [],
+    args: [deployer],
   });
 };
 
-module.exports.tags = ['Mock'];
+module.exports.tags = ['Factory'];

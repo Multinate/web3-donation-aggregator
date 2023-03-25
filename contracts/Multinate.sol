@@ -4,7 +4,6 @@ pragma solidity 0.8.15;
 import "./interfaces/IAttestationStation.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "hardhat/console.sol";
 
 contract Multinate is Ownable {
     IAttestationStation public attestationStation;
@@ -59,10 +58,8 @@ contract Multinate is Ownable {
         // Add a scoring system based on the attestation data
         bytes memory registrationData = attestationStation.attestations(msg.sender, _charity, REGISTRATION_KEY);
         score += calculateRegistrationScore(registrationData);
-        console.log("score after registration: %s", score);
         bytes memory taxExemptStatusData = attestationStation.attestations(msg.sender, _charity, TAX_EXEMPT_STATUS_KEY);
         score += calculateTaxExemptStatusScore(taxExemptStatusData);
-        console.log("score after tax exempt: %s", score);
         bytes memory financialStatementsData = attestationStation.attestations(
             msg.sender,
             _charity,

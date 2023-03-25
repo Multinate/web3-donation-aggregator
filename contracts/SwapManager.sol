@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.15;
-import "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
+import "./interfaces/IPancakeRouter02.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "./interfaces/IHypERC20.sol";
@@ -12,7 +12,7 @@ contract SwapManager {
     address public hypUSDCToken;
     address public multinate;
     uint32 public chainId;
-    IUniswapV2Router02 public uniswapRouter;
+    IPancakeRouter02 public uniswapRouter;
 
     event DonationReceived(address indexed donor, address indexed token, uint256 amount);
     event DonationReceivedETH(address indexed donor, uint256 amount);
@@ -29,7 +29,7 @@ contract SwapManager {
         hypUSDCToken = _hypUSDCToken;
         multinate = _multinate;
         chainId = _chainId;
-        uniswapRouter = IUniswapV2Router02(_uniswapRouter);
+        uniswapRouter = IPancakeRouter02(_uniswapRouter);
     }
 
     function addressToBytes32(address addr) public pure returns (bytes32) {
@@ -106,7 +106,7 @@ contract SwapManager {
     }
 
     function setUniswapRouter(address _uniswapRouter) external {
-        uniswapRouter = IUniswapV2Router02(_uniswapRouter);
+        uniswapRouter = IPancakeRouter02(_uniswapRouter);
     }
 
     function setHypUSDCToken(address _hypUSDCToken) external {
