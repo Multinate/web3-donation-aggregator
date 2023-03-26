@@ -21,14 +21,19 @@ async function main() {
   // Get contracts
   const usdc: MockUSDC = await ethers.getContract('MockUSDC', signers[0]);
   const gnosisUsdc = '0x651130570e902bdf0C61C70215aE226A47646f78';
-  const chainId = 534353;
-  //const chainId = 10;
+  //const chainId = 534353;
+  const chainId = 10;
   console.log('Running script');
   // Get contract at address hypUsdcOpColl with abi HypERC20Collateral.json
   const hypUsdc = new ethers.Contract(gnosisUsdc, abi, signers[0]);
-  let tx = await hypUsdc.transferRemote(chainId, addressToBytes32(signers[0].address), ethers.utils.parseEther('100'), {
-    value: ethers.utils.parseEther('0.6'),
-  });
+  let tx = await hypUsdc.transferRemote(
+    chainId,
+    addressToBytes32(signers[0].address),
+    ethers.utils.parseEther('10000000'),
+    {
+      value: ethers.utils.parseEther('0.6'),
+    }
+  );
 }
 main()
   .then(() => process.exit(0))

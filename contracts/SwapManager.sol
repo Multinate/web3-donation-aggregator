@@ -54,15 +54,15 @@ contract SwapManager is Ownable {
         }
         if (chainId != 100) {
             // Call Hyperlane to bridge USDC to Optimism and require success
-            IHypERC20(hypUSDCToken).transferRemote{ value: 0.6 ether }(chainId, addressToBytes32(multinate), _amount);
+            IHypERC20(hypUSDCToken).transferRemote{ value: 0.01 ether }(chainId, addressToBytes32(multinate), _amount);
             bytes32 messageId = mailbox.dispatch(
-                chainId,
+                100,
                 addressToBytes32(multinate),
                 abi.encode(msg.sender, _campaignId, _amountsOut)
             );
             igp.payForGas{ value: msg.value }(
                 messageId, // The ID of the message that was just dispatched
-                chainId, // The destination domain of the message
+                100, // The destination domain of the message
                 50000, // 50k gas to use in the recipient's handle function
                 msg.sender // refunds go to msg.sender, who paid the msg.value
             );

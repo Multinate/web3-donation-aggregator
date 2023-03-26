@@ -103,7 +103,7 @@ module.exports = {
       saveDeployments: true,
     },
     optimism_mainnet: {
-      url: 'https://mainnet.optimism.io',
+      url: 'https://dry-silent-needle.optimism.discover.quiknode.pro/e512f6275a66375bec37ad953e978957d491a8d5/',
       chainId: 10,
       accounts: [PRIVATE_KEY],
       saveDeployments: true,
