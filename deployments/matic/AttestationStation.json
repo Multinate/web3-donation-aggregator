@@ -1,0 +1,286 @@
+{
+  "address": "0xc4eA30bA18593af366D66Bc11ac36f9e37552B8e",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "creator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "about",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "val",
+          "type": "bytes"
+        }
+      ],
+      "name": "AttestationCreated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "about",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "key",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "val",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AttestationStation.AttestationData[]",
+          "name": "_attestations",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "attest",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_about",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_key",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_val",
+          "type": "bytes"
+        }
+      ],
+      "name": "attest",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "attestations",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x7a09e6f96f7ee002631a7e9ab850f1c2ae5be4fe79422551036e1741bbcb1dbe",
+  "receipt": {
+    "to": null,
+    "from": "0x6860542E55Fb9292e4c8b478FcEec724d3351C2e",
+    "contractAddress": "0xc4eA30bA18593af366D66Bc11ac36f9e37552B8e",
+    "transactionIndex": 61,
+    "gasUsed": "553435",
+    "logsBloom": "0x80000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000800000000000400000000100000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000004000000000000000000001000000000000000000000000000000100000000000000000004000000000000000000000000000000000000000000000000000100010",
+    "blockHash": "0xb16be271aba96830688de90cf58e80f4fbb17ac6ca8ee82a38532563cb330855",
+    "transactionHash": "0x7a09e6f96f7ee002631a7e9ab850f1c2ae5be4fe79422551036e1741bbcb1dbe",
+    "logs": [
+      {
+        "transactionIndex": 61,
+        "blockNumber": 40760708,
+        "transactionHash": "0x7a09e6f96f7ee002631a7e9ab850f1c2ae5be4fe79422551036e1741bbcb1dbe",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000006860542e55fb9292e4c8b478fceec724d3351c2e",
+          "0x0000000000000000000000007c7379531b2aee82e4ca06d4175d13b9cbeafd49"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000007cbaeb772ed66000000000000000000000000000000000000000000000000b120cd47ee02ec3200000000000000000000000000000000000000000001f53b77b3dffb22f8ffad000000000000000000000000000000000000000000000000b1190199368ffecc00000000000000000000000000000000000000000001f53b77bbaba9da6bed13",
+        "logIndex": 326,
+        "blockHash": "0xb16be271aba96830688de90cf58e80f4fbb17ac6ca8ee82a38532563cb330855"
+      }
+    ],
+    "blockNumber": 40760708,
+    "cumulativeGasUsed": "23140225",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "c59e5d9a4136e2f30ee9632d01fa5175",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"creator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"about\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"key\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"val\",\"type\":\"bytes\"}],\"name\":\"AttestationCreated\",\"type\":\"event\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"about\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"key\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"val\",\"type\":\"bytes\"}],\"internalType\":\"struct AttestationStation.AttestationData[]\",\"name\":\"_attestations\",\"type\":\"tuple[]\"}],\"name\":\"attest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_about\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_key\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"_val\",\"type\":\"bytes\"}],\"name\":\"attest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"attestations\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Optimism CollectiveGitcoin\",\"events\":{\"AttestationCreated(address,address,bytes32,bytes)\":{\"params\":{\"about\":\"Address attestation is about.\",\"creator\":\"Address that made the attestation.\",\"key\":\"Key of the attestation.\",\"val\":\"Value of the attestation.\"}}},\"kind\":\"dev\",\"methods\":{\"attest((address,bytes32,bytes)[])\":{\"params\":{\"_attestations\":\"An array of attestation data.\"}},\"attest(address,bytes32,bytes)\":{\"params\":{\"_about\":\"Address that the attestation is about.\",\"_key\":\"A key used to namespace the attestation.\",\"_val\":\"An arbitrary value stored as part of the attestation.\"}},\"constructor\":{\"custom:semver\":\"1.1.0\"},\"version()\":{\"returns\":{\"_0\":\"Semver contract version as a string.\"}}},\"title\":\"AttestationStation\",\"version\":1},\"userdoc\":{\"events\":{\"AttestationCreated(address,address,bytes32,bytes)\":{\"notice\":\"Emitted when Attestation is created.\"}},\"kind\":\"user\",\"methods\":{\"attest((address,bytes32,bytes)[])\":{\"notice\":\"Allows anyone to create attestations.\"},\"attest(address,bytes32,bytes)\":{\"notice\":\"Allows anyone to create an attestation.\"},\"attestations(address,address,bytes32)\":{\"notice\":\"Maps addresses to attestations. Creator => About => Key => Value.\"},\"version()\":{\"notice\":\"Returns the full semver contract version.\"}},\"notice\":\"Where attestations live.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/mock/AttestationStation.sol\":\"AttestationStation\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@eth-optimism/contracts-bedrock/contracts/universal/Semver.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\nimport { Strings } from \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\n/**\\n * @title Semver\\n * @notice Semver is a simple contract for managing contract versions.\\n */\\ncontract Semver {\\n    /**\\n     * @notice Contract version number (major).\\n     */\\n    uint256 private immutable MAJOR_VERSION;\\n\\n    /**\\n     * @notice Contract version number (minor).\\n     */\\n    uint256 private immutable MINOR_VERSION;\\n\\n    /**\\n     * @notice Contract version number (patch).\\n     */\\n    uint256 private immutable PATCH_VERSION;\\n\\n    /**\\n     * @param _major Version number (major).\\n     * @param _minor Version number (minor).\\n     * @param _patch Version number (patch).\\n     */\\n    constructor(\\n        uint256 _major,\\n        uint256 _minor,\\n        uint256 _patch\\n    ) {\\n        MAJOR_VERSION = _major;\\n        MINOR_VERSION = _minor;\\n        PATCH_VERSION = _patch;\\n    }\\n\\n    /**\\n     * @notice Returns the full semver contract version.\\n     *\\n     * @return Semver contract version as a string.\\n     */\\n    function version() public view returns (string memory) {\\n        return\\n            string(\\n                abi.encodePacked(\\n                    Strings.toString(MAJOR_VERSION),\\n                    \\\".\\\",\\n                    Strings.toString(MINOR_VERSION),\\n                    \\\".\\\",\\n                    Strings.toString(PATCH_VERSION)\\n                )\\n            );\\n    }\\n}\\n\",\"keccak256\":\"0x400059d3edb9efc9c23e6fbc18de6710f9235a4ffba4ab23bdb9f825273f093b\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./math/Math.sol\\\";\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        unchecked {\\n            uint256 length = Math.log10(value) + 1;\\n            string memory buffer = new string(length);\\n            uint256 ptr;\\n            /// @solidity memory-safe-assembly\\n            assembly {\\n                ptr := add(buffer, add(32, length))\\n            }\\n            while (true) {\\n                ptr--;\\n                /// @solidity memory-safe-assembly\\n                assembly {\\n                    mstore8(ptr, byte(mod(value, 10), _SYMBOLS))\\n                }\\n                value /= 10;\\n                if (value == 0) break;\\n            }\\n            return buffer;\\n        }\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        unchecked {\\n            return toHexString(value, Math.log256(value) + 1);\\n        }\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/math/Math.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/math/Math.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Standard math utilities missing in the Solidity language.\\n */\\nlibrary Math {\\n    enum Rounding {\\n        Down, // Toward negative infinity\\n        Up, // Toward infinity\\n        Zero // Toward zero\\n    }\\n\\n    /**\\n     * @dev Returns the largest of two numbers.\\n     */\\n    function max(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a > b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the smallest of two numbers.\\n     */\\n    function min(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a < b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the average of two numbers. The result is rounded towards\\n     * zero.\\n     */\\n    function average(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b) / 2 can overflow.\\n        return (a & b) + (a ^ b) / 2;\\n    }\\n\\n    /**\\n     * @dev Returns the ceiling of the division of two numbers.\\n     *\\n     * This differs from standard division with `/` in that it rounds up instead\\n     * of rounding down.\\n     */\\n    function ceilDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b - 1) / b can overflow on addition, so we distribute.\\n        return a == 0 ? 0 : (a - 1) / b + 1;\\n    }\\n\\n    /**\\n     * @notice Calculates floor(x * y / denominator) with full precision. Throws if result overflows a uint256 or denominator == 0\\n     * @dev Original credit to Remco Bloemen under MIT license (https://xn--2-umb.com/21/muldiv)\\n     * with further edits by Uniswap Labs also under MIT license.\\n     */\\n    function mulDiv(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator\\n    ) internal pure returns (uint256 result) {\\n        unchecked {\\n            // 512-bit multiply [prod1 prod0] = x * y. Compute the product mod 2^256 and mod 2^256 - 1, then use\\n            // use the Chinese Remainder Theorem to reconstruct the 512 bit result. The result is stored in two 256\\n            // variables such that product = prod1 * 2^256 + prod0.\\n            uint256 prod0; // Least significant 256 bits of the product\\n            uint256 prod1; // Most significant 256 bits of the product\\n            assembly {\\n                let mm := mulmod(x, y, not(0))\\n                prod0 := mul(x, y)\\n                prod1 := sub(sub(mm, prod0), lt(mm, prod0))\\n            }\\n\\n            // Handle non-overflow cases, 256 by 256 division.\\n            if (prod1 == 0) {\\n                return prod0 / denominator;\\n            }\\n\\n            // Make sure the result is less than 2^256. Also prevents denominator == 0.\\n            require(denominator > prod1);\\n\\n            ///////////////////////////////////////////////\\n            // 512 by 256 division.\\n            ///////////////////////////////////////////////\\n\\n            // Make division exact by subtracting the remainder from [prod1 prod0].\\n            uint256 remainder;\\n            assembly {\\n                // Compute remainder using mulmod.\\n                remainder := mulmod(x, y, denominator)\\n\\n                // Subtract 256 bit number from 512 bit number.\\n                prod1 := sub(prod1, gt(remainder, prod0))\\n                prod0 := sub(prod0, remainder)\\n            }\\n\\n            // Factor powers of two out of denominator and compute largest power of two divisor of denominator. Always >= 1.\\n            // See https://cs.stackexchange.com/q/138556/92363.\\n\\n            // Does not overflow because the denominator cannot be zero at this stage in the function.\\n            uint256 twos = denominator & (~denominator + 1);\\n            assembly {\\n                // Divide denominator by twos.\\n                denominator := div(denominator, twos)\\n\\n                // Divide [prod1 prod0] by twos.\\n                prod0 := div(prod0, twos)\\n\\n                // Flip twos such that it is 2^256 / twos. If twos is zero, then it becomes one.\\n                twos := add(div(sub(0, twos), twos), 1)\\n            }\\n\\n            // Shift in bits from prod1 into prod0.\\n            prod0 |= prod1 * twos;\\n\\n            // Invert denominator mod 2^256. Now that denominator is an odd number, it has an inverse modulo 2^256 such\\n            // that denominator * inv = 1 mod 2^256. Compute the inverse by starting with a seed that is correct for\\n            // four bits. That is, denominator * inv = 1 mod 2^4.\\n            uint256 inverse = (3 * denominator) ^ 2;\\n\\n            // Use the Newton-Raphson iteration to improve the precision. Thanks to Hensel's lifting lemma, this also works\\n            // in modular arithmetic, doubling the correct bits in each step.\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^8\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^16\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^32\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^64\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^128\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^256\\n\\n            // Because the division is now exact we can divide by multiplying with the modular inverse of denominator.\\n            // This will give us the correct result modulo 2^256. Since the preconditions guarantee that the outcome is\\n            // less than 2^256, this is the final result. We don't need to compute the high bits of the result and prod1\\n            // is no longer required.\\n            result = prod0 * inverse;\\n            return result;\\n        }\\n    }\\n\\n    /**\\n     * @notice Calculates x * y / denominator with full precision, following the selected rounding direction.\\n     */\\n    function mulDiv(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator,\\n        Rounding rounding\\n    ) internal pure returns (uint256) {\\n        uint256 result = mulDiv(x, y, denominator);\\n        if (rounding == Rounding.Up && mulmod(x, y, denominator) > 0) {\\n            result += 1;\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Returns the square root of a number. If the number is not a perfect square, the value is rounded down.\\n     *\\n     * Inspired by Henry S. Warren, Jr.'s \\\"Hacker's Delight\\\" (Chapter 11).\\n     */\\n    function sqrt(uint256 a) internal pure returns (uint256) {\\n        if (a == 0) {\\n            return 0;\\n        }\\n\\n        // For our first guess, we get the biggest power of 2 which is smaller than the square root of the target.\\n        //\\n        // We know that the \\\"msb\\\" (most significant bit) of our target number `a` is a power of 2 such that we have\\n        // `msb(a) <= a < 2*msb(a)`. This value can be written `msb(a)=2**k` with `k=log2(a)`.\\n        //\\n        // This can be rewritten `2**log2(a) <= a < 2**(log2(a) + 1)`\\n        // \\u2192 `sqrt(2**k) <= sqrt(a) < sqrt(2**(k+1))`\\n        // \\u2192 `2**(k/2) <= sqrt(a) < 2**((k+1)/2) <= 2**(k/2 + 1)`\\n        //\\n        // Consequently, `2**(log2(a) / 2)` is a good first approximation of `sqrt(a)` with at least 1 correct bit.\\n        uint256 result = 1 << (log2(a) >> 1);\\n\\n        // At this point `result` is an estimation with one bit of precision. We know the true value is a uint128,\\n        // since it is the square root of a uint256. Newton's method converges quadratically (precision doubles at\\n        // every iteration). We thus need at most 7 iteration to turn our partial result with one bit of precision\\n        // into the expected uint128 result.\\n        unchecked {\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            return min(result, a / result);\\n        }\\n    }\\n\\n    /**\\n     * @notice Calculates sqrt(a), following the selected rounding direction.\\n     */\\n    function sqrt(uint256 a, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = sqrt(a);\\n            return result + (rounding == Rounding.Up && result * result < a ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 2, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log2(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >> 128 > 0) {\\n                value >>= 128;\\n                result += 128;\\n            }\\n            if (value >> 64 > 0) {\\n                value >>= 64;\\n                result += 64;\\n            }\\n            if (value >> 32 > 0) {\\n                value >>= 32;\\n                result += 32;\\n            }\\n            if (value >> 16 > 0) {\\n                value >>= 16;\\n                result += 16;\\n            }\\n            if (value >> 8 > 0) {\\n                value >>= 8;\\n                result += 8;\\n            }\\n            if (value >> 4 > 0) {\\n                value >>= 4;\\n                result += 4;\\n            }\\n            if (value >> 2 > 0) {\\n                value >>= 2;\\n                result += 2;\\n            }\\n            if (value >> 1 > 0) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 2, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log2(value);\\n            return result + (rounding == Rounding.Up && 1 << result < value ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log10(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >= 10**64) {\\n                value /= 10**64;\\n                result += 64;\\n            }\\n            if (value >= 10**32) {\\n                value /= 10**32;\\n                result += 32;\\n            }\\n            if (value >= 10**16) {\\n                value /= 10**16;\\n                result += 16;\\n            }\\n            if (value >= 10**8) {\\n                value /= 10**8;\\n                result += 8;\\n            }\\n            if (value >= 10**4) {\\n                value /= 10**4;\\n                result += 4;\\n            }\\n            if (value >= 10**2) {\\n                value /= 10**2;\\n                result += 2;\\n            }\\n            if (value >= 10**1) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log10(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log10(value);\\n            return result + (rounding == Rounding.Up && 10**result < value ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 256, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     *\\n     * Adding one to the result gives the number of pairs of hex symbols needed to represent `value` as a hex string.\\n     */\\n    function log256(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >> 128 > 0) {\\n                value >>= 128;\\n                result += 16;\\n            }\\n            if (value >> 64 > 0) {\\n                value >>= 64;\\n                result += 8;\\n            }\\n            if (value >> 32 > 0) {\\n                value >>= 32;\\n                result += 4;\\n            }\\n            if (value >> 16 > 0) {\\n                value >>= 16;\\n                result += 2;\\n            }\\n            if (value >> 8 > 0) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log256(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log256(value);\\n            return result + (rounding == Rounding.Up && 1 << (result * 8) < value ? 1 : 0);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\"},\"contracts/mock/AttestationStation.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity 0.8.15;\\r\\n\\r\\nimport { Semver } from \\\"@eth-optimism/contracts-bedrock/contracts/universal/Semver.sol\\\";\\r\\n\\r\\n/**\\r\\n * @title AttestationStation\\r\\n * @author Optimism Collective\\r\\n * @author Gitcoin\\r\\n * @notice Where attestations live.\\r\\n */\\r\\ncontract AttestationStation is Semver {\\r\\n    /**\\r\\n     * @notice Struct representing data that is being attested.\\r\\n     *\\r\\n     * @custom:field about Address for which the attestation is about.\\r\\n     * @custom:field key   A bytes32 key for the attestation.\\r\\n     * @custom:field val   The attestation as arbitrary bytes.\\r\\n     */\\r\\n    struct AttestationData {\\r\\n        address about;\\r\\n        bytes32 key;\\r\\n        bytes val;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Maps addresses to attestations. Creator => About => Key => Value.\\r\\n     */\\r\\n    mapping(address => mapping(address => mapping(bytes32 => bytes))) public attestations;\\r\\n\\r\\n    /**\\r\\n     * @notice Emitted when Attestation is created.\\r\\n     *\\r\\n     * @param creator Address that made the attestation.\\r\\n     * @param about   Address attestation is about.\\r\\n     * @param key     Key of the attestation.\\r\\n     * @param val     Value of the attestation.\\r\\n     */\\r\\n    event AttestationCreated(address indexed creator, address indexed about, bytes32 indexed key, bytes val);\\r\\n\\r\\n    /**\\r\\n     * @custom:semver 1.1.0\\r\\n     */\\r\\n    constructor() Semver(1, 1, 0) {}\\r\\n\\r\\n    /**\\r\\n     * @notice Allows anyone to create an attestation.\\r\\n     *\\r\\n     * @param _about Address that the attestation is about.\\r\\n     * @param _key   A key used to namespace the attestation.\\r\\n     * @param _val   An arbitrary value stored as part of the attestation.\\r\\n     */\\r\\n    function attest(address _about, bytes32 _key, bytes memory _val) public {\\r\\n        attestations[msg.sender][_about][_key] = _val;\\r\\n\\r\\n        emit AttestationCreated(msg.sender, _about, _key, _val);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Allows anyone to create attestations.\\r\\n     *\\r\\n     * @param _attestations An array of attestation data.\\r\\n     */\\r\\n    function attest(AttestationData[] calldata _attestations) external {\\r\\n        uint256 length = _attestations.length;\\r\\n        for (uint256 i = 0; i < length; ) {\\r\\n            AttestationData memory attestation = _attestations[i];\\r\\n\\r\\n            attest(attestation.about, attestation.key, attestation.val);\\r\\n\\r\\n            unchecked {\\r\\n                ++i;\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x2d161072f651f92b478e94877dd95b3598d7329c9fb2d43d65860b34905c1266\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60e060405234801561001057600080fd5b506001608081905260a052600060c05260805160a05160c05161090f61004f60003960006101ad015260006101840152600061015b015261090f6000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806329b42cb51461005157806354fd4d501461007a5780635eb5ea1014610082578063702b9dee14610097575b600080fd5b61006461005f366004610467565b6100aa565b60405161007191906104fb565b60405180910390f35b610064610154565b610095610090366004610515565b6101f7565b005b6100956100a536600461062d565b61025a565b60006020818152938152604080822085529281528281209093528252902080546100d390610684565b80601f01602080910402602001604051908101604052809291908181526020018280546100ff90610684565b801561014c5780601f106101215761010080835404028352916020019161014c565b820191906000526020600020905b81548152906001019060200180831161012f57829003601f168201915b505050505081565b606061017f7f00000000000000000000000000000000000000000000000000000000000000006102df565b6101a87f00000000000000000000000000000000000000000000000000000000000000006102df565b6101d17f00000000000000000000000000000000000000000000000000000000000000006102df565b6040516020016101e3939291906106be565b604051602081830303815290604052905090565b8060005b8181101561025457600084848381811061021757610217610718565b9050602002810190610229919061072e565b6102329061074e565b905061024b81600001518260200151836040015161025a565b506001016101fb565b50505050565b336000908152602081815260408083206001600160a01b03871684528252808320858452909152902061028d8282610819565b5081836001600160a01b0316336001600160a01b03167f28710dfecab43d1e29e02aa56b2e1e610c0bae19135c9cf7a83a1adb6df96d85846040516102d291906104fb565b60405180910390a4505050565b606060006102ec83610372565b600101905060008167ffffffffffffffff81111561030c5761030c61058a565b6040519080825280601f01601f191660200182016040528015610336576020820181803683370190505b5090508181016020015b600019016f181899199a1a9b1b9c1cb0b131b232b360811b600a86061a8153600a850494508461034057509392505050565b60008072184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b83106103b15772184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b830492506040015b6d04ee2d6d415b85acef810000000083106103dd576d04ee2d6d415b85acef8100000000830492506020015b662386f26fc1000083106103fb57662386f26fc10000830492506010015b6305f5e1008310610413576305f5e100830492506008015b612710831061042757612710830492506004015b60648310610439576064830492506002015b600a8310610445576001015b92915050565b80356001600160a01b038116811461046257600080fd5b919050565b60008060006060848603121561047c57600080fd5b6104858461044b565b92506104936020850161044b565b9150604084013590509250925092565b60005b838110156104be5781810151838201526020016104a6565b838111156102545750506000910152565b600081518084526104e78160208601602086016104a3565b601f01601f19169290920160200192915050565b60208152600061050e60208301846104cf565b9392505050565b6000806020838503121561052857600080fd5b823567ffffffffffffffff8082111561054057600080fd5b818501915085601f83011261055457600080fd5b81358181111561056357600080fd5b8660208260051b850101111561057857600080fd5b60209290920196919550909350505050565b634e487b7160e01b600052604160045260246000fd5b600082601f8301126105b157600080fd5b813567ffffffffffffffff808211156105cc576105cc61058a565b604051601f8301601f19908116603f011681019082821181831017156105f4576105f461058a565b8160405283815286602085880101111561060d57600080fd5b836020870160208301376000602085830101528094505050505092915050565b60008060006060848603121561064257600080fd5b61064b8461044b565b925060208401359150604084013567ffffffffffffffff81111561066e57600080fd5b61067a868287016105a0565b9150509250925092565b600181811c9082168061069857607f821691505b6020821081036106b857634e487b7160e01b600052602260045260246000fd5b50919050565b600084516106d08184602089016104a3565b8083019050601760f91b80825285516106f0816001850160208a016104a3565b6001920191820152835161070b8160028401602088016104a3565b0160020195945050505050565b634e487b7160e01b600052603260045260246000fd5b60008235605e1983360301811261074457600080fd5b9190910192915050565b60006060823603121561076057600080fd5b6040516060810167ffffffffffffffff82821081831117156107845761078461058a565b816040526107918561044b565b83526020850135602084015260408501359150808211156107b157600080fd5b506107be368286016105a0565b60408301525092915050565b601f82111561081457600081815260208120601f850160051c810160208610156107f15750805b601f850160051c820191505b81811015610810578281556001016107fd565b5050505b505050565b815167ffffffffffffffff8111156108335761083361058a565b610847816108418454610684565b846107ca565b602080601f83116001811461087c57600084156108645750858301515b600019600386901b1c1916600185901b178555610810565b600085815260208120601f198616915b828110156108ab5788860151825594840194600190910190840161088c565b50858210156108c95787850151600019600388901b60f8161c191681555b5050505050600190811b0190555056fea26469706673582212201e031808c0ddadb95a2431c1e69913033ef834a49fb03351356513f6ae3c6e5f64736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806329b42cb51461005157806354fd4d501461007a5780635eb5ea1014610082578063702b9dee14610097575b600080fd5b61006461005f366004610467565b6100aa565b60405161007191906104fb565b60405180910390f35b610064610154565b610095610090366004610515565b6101f7565b005b6100956100a536600461062d565b61025a565b60006020818152938152604080822085529281528281209093528252902080546100d390610684565b80601f01602080910402602001604051908101604052809291908181526020018280546100ff90610684565b801561014c5780601f106101215761010080835404028352916020019161014c565b820191906000526020600020905b81548152906001019060200180831161012f57829003601f168201915b505050505081565b606061017f7f00000000000000000000000000000000000000000000000000000000000000006102df565b6101a87f00000000000000000000000000000000000000000000000000000000000000006102df565b6101d17f00000000000000000000000000000000000000000000000000000000000000006102df565b6040516020016101e3939291906106be565b604051602081830303815290604052905090565b8060005b8181101561025457600084848381811061021757610217610718565b9050602002810190610229919061072e565b6102329061074e565b905061024b81600001518260200151836040015161025a565b506001016101fb565b50505050565b336000908152602081815260408083206001600160a01b03871684528252808320858452909152902061028d8282610819565b5081836001600160a01b0316336001600160a01b03167f28710dfecab43d1e29e02aa56b2e1e610c0bae19135c9cf7a83a1adb6df96d85846040516102d291906104fb565b60405180910390a4505050565b606060006102ec83610372565b600101905060008167ffffffffffffffff81111561030c5761030c61058a565b6040519080825280601f01601f191660200182016040528015610336576020820181803683370190505b5090508181016020015b600019016f181899199a1a9b1b9c1cb0b131b232b360811b600a86061a8153600a850494508461034057509392505050565b60008072184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b83106103b15772184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b830492506040015b6d04ee2d6d415b85acef810000000083106103dd576d04ee2d6d415b85acef8100000000830492506020015b662386f26fc1000083106103fb57662386f26fc10000830492506010015b6305f5e1008310610413576305f5e100830492506008015b612710831061042757612710830492506004015b60648310610439576064830492506002015b600a8310610445576001015b92915050565b80356001600160a01b038116811461046257600080fd5b919050565b60008060006060848603121561047c57600080fd5b6104858461044b565b92506104936020850161044b565b9150604084013590509250925092565b60005b838110156104be5781810151838201526020016104a6565b838111156102545750506000910152565b600081518084526104e78160208601602086016104a3565b601f01601f19169290920160200192915050565b60208152600061050e60208301846104cf565b9392505050565b6000806020838503121561052857600080fd5b823567ffffffffffffffff8082111561054057600080fd5b818501915085601f83011261055457600080fd5b81358181111561056357600080fd5b8660208260051b850101111561057857600080fd5b60209290920196919550909350505050565b634e487b7160e01b600052604160045260246000fd5b600082601f8301126105b157600080fd5b813567ffffffffffffffff808211156105cc576105cc61058a565b604051601f8301601f19908116603f011681019082821181831017156105f4576105f461058a565b8160405283815286602085880101111561060d57600080fd5b836020870160208301376000602085830101528094505050505092915050565b60008060006060848603121561064257600080fd5b61064b8461044b565b925060208401359150604084013567ffffffffffffffff81111561066e57600080fd5b61067a868287016105a0565b9150509250925092565b600181811c9082168061069857607f821691505b6020821081036106b857634e487b7160e01b600052602260045260246000fd5b50919050565b600084516106d08184602089016104a3565b8083019050601760f91b80825285516106f0816001850160208a016104a3565b6001920191820152835161070b8160028401602088016104a3565b0160020195945050505050565b634e487b7160e01b600052603260045260246000fd5b60008235605e1983360301811261074457600080fd5b9190910192915050565b60006060823603121561076057600080fd5b6040516060810167ffffffffffffffff82821081831117156107845761078461058a565b816040526107918561044b565b83526020850135602084015260408501359150808211156107b157600080fd5b506107be368286016105a0565b60408301525092915050565b601f82111561081457600081815260208120601f850160051c810160208610156107f15750805b601f850160051c820191505b81811015610810578281556001016107fd565b5050505b505050565b815167ffffffffffffffff8111156108335761083361058a565b610847816108418454610684565b846107ca565b602080601f83116001811461087c57600084156108645750858301515b600019600386901b1c1916600185901b178555610810565b600085815260208120601f198616915b828110156108ab5788860151825594840194600190910190840161088c565b50858210156108c95787850151600019600388901b60f8161c191681555b5050505050600190811b0190555056fea26469706673582212201e031808c0ddadb95a2431c1e69913033ef834a49fb03351356513f6ae3c6e5f64736f6c634300080f0033",
+  "devdoc": {
+    "author": "Optimism CollectiveGitcoin",
+    "events": {
+      "AttestationCreated(address,address,bytes32,bytes)": {
+        "params": {
+          "about": "Address attestation is about.",
+          "creator": "Address that made the attestation.",
+          "key": "Key of the attestation.",
+          "val": "Value of the attestation."
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "attest((address,bytes32,bytes)[])": {
+        "params": {
+          "_attestations": "An array of attestation data."
+        }
+      },
+      "attest(address,bytes32,bytes)": {
+        "params": {
+          "_about": "Address that the attestation is about.",
+          "_key": "A key used to namespace the attestation.",
+          "_val": "An arbitrary value stored as part of the attestation."
+        }
+      },
+      "constructor": {
+        "custom:semver": "1.1.0"
+      },
+      "version()": {
+        "returns": {
+          "_0": "Semver contract version as a string."
+        }
+      }
+    },
+    "title": "AttestationStation",
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "AttestationCreated(address,address,bytes32,bytes)": {
+        "notice": "Emitted when Attestation is created."
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "attest((address,bytes32,bytes)[])": {
+        "notice": "Allows anyone to create attestations."
+      },
+      "attest(address,bytes32,bytes)": {
+        "notice": "Allows anyone to create an attestation."
+      },
+      "attestations(address,address,bytes32)": {
+        "notice": "Maps addresses to attestations. Creator => About => Key => Value."
+      },
+      "version()": {
+        "notice": "Returns the full semver contract version."
+      }
+    },
+    "notice": "Where attestations live.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 5366,
+        "contract": "contracts/mock/AttestationStation.sol:AttestationStation",
+        "label": "attestations",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_mapping(t_address,t_mapping(t_bytes32,t_bytes_storage)))"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_bytes_storage": {
+        "encoding": "bytes",
+        "label": "bytes",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_mapping(t_address,t_mapping(t_bytes32,t_bytes_storage)))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(address => mapping(bytes32 => bytes)))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_mapping(t_bytes32,t_bytes_storage))"
+      },
+      "t_mapping(t_address,t_mapping(t_bytes32,t_bytes_storage))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(bytes32 => bytes))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_bytes32,t_bytes_storage)"
+      },
+      "t_mapping(t_bytes32,t_bytes_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => bytes)",
+        "numberOfBytes": "32",
+        "value": "t_bytes_storage"
+      }
+    }
+  }
+}
