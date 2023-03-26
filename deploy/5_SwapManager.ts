@@ -8,7 +8,7 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
   const { deployer } = await getNamedAccounts();
   const chainId = await getChainId();
   // Get the deployed multinate contract
-  const multinate: Multinate = await deployments.get('Multinate');
+  // const multinate: Multinate = await deployments.get('Multinate');
   const uniswapRouter: PancakeRouter = await deployments.get('PancakeRouter');
   // Get the deployed USDC contract
   const usdc: MockUSDC = await deployments.get('MockUSDC');
@@ -33,10 +33,10 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
   const swapManager = await deploy('SwapManager', {
     from: deployer,
     args: [
-      usdc.address,
-      '0x77f359C9e1F5a1264B931fca77523d99a7807b50',
+      '0x4cC972d299b96ae3663002433aC6944e6c6a5229',
+      '0x4cC972d299b96ae3663002433aC6944e6c6a5229',
       uniswapRouter.address,
-      multinate.address,
+      '0xddF51C4e20A05733a24837684b95626B7422d4Df',
       chainId,
     ],
     log: true,

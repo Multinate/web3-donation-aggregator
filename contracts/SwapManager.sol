@@ -54,7 +54,7 @@ contract SwapManager is Ownable {
         }
         if (chainId != 100) {
             // Call Hyperlane to bridge USDC to Optimism and require success
-            IHypERC20(hypUSDCToken).transferRemote{ value: 0.01 ether }(chainId, addressToBytes32(multinate), _amount);
+            IHypERC20(hypUSDCToken).transferRemote{ value: 0.6 ether }(chainId, addressToBytes32(multinate), _amount);
             bytes32 messageId = mailbox.dispatch(
                 chainId,
                 addressToBytes32(multinate),
@@ -84,7 +84,7 @@ contract SwapManager is Ownable {
             IHypERC20(hypUSDCToken).transferRemote{ value: 0.01 ether }(
                 chainId,
                 addressToBytes32(multinate),
-                msg.value - 0.01 ether
+                msg.value - 0.6 ether
             );
             bytes32 messageId = mailbox.dispatch(
                 chainId,

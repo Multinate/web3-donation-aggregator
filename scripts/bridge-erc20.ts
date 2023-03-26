@@ -20,8 +20,9 @@ async function main() {
 
   // Get contracts
   const usdc: MockUSDC = await ethers.getContract('MockUSDC', signers[0]);
-  const gnosisUsdc = '0x77f359C9e1F5a1264B931fca77523d99a7807b50';
-  const chainId = 10;
+  const gnosisUsdc = '0x651130570e902bdf0C61C70215aE226A47646f78';
+  const chainId = 534353;
+  //const chainId = 10;
   console.log('Running script');
   // Get contract at address hypUsdcOpColl with abi HypERC20Collateral.json
   const hypUsdc = new ethers.Contract(gnosisUsdc, abi, signers[0]);
