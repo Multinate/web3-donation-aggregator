@@ -9,6 +9,7 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
 
   // Get the deployed attestation contract
   const attestation: AttestationStation = await deployments.get('AttestationStation');
+  //let attestation = '0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77';
   // Get the deployed USDC contract
   const usdc: MockUSDC = await deployments.get('MockUSDC');
 
