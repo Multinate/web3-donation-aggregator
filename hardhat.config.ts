@@ -85,7 +85,7 @@ module.exports = {
       gasPrice: 52071155694,
     },
     matic: {
-      url: 'https://polygon-rpc.com/',
+      url: 'https://nd-178-050-667.p2pify.com/6de244435837d2e254f9dacadc307f19',
       chainId: 137,
       accounts: [PRIVATE_KEY],
     },

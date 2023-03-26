@@ -19,6 +19,7 @@
     "@eth-optimism/contracts-bedrock": "^0.13.1",
     "@ethersproject/hardware-wallets": "^5.7.0",
     "@graphprotocol/graph-cli": "^0.37.7",
+    "@hyperlane-xyz/core": "^1.2.3",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
     "@nomiclabs/hardhat-etherscan": "^3.1.5",
     "@openzeppelin/contracts": "^4.8.0",
