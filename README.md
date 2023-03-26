@@ -1,6 +1,6 @@
 # Multinate - Cross-chain Donation Aggregator
+![photo_2023-03-26_18-00-29 (2)](https://user-images.githubusercontent.com/110725797/227771917-7f341b85-59ee-45a5-9b4e-6d05c022b4b6.jpg)
 
-![logo-color](https://user-images.githubusercontent.com/110725797/227445730-b160b29a-905a-49d5-87f2-6241eba031fb.png)
 Multinate is a web-based application that enables charity organizations to create fundraising events and accept donations from various supported blockchains. The platform utilizes **Snapshot** to create a proposal for fundraising, which is then executed via a **Safe** with validation by **UMA**. The execution of the smart contract function is verified by **Optimism's attestation contract**, which ensures that the charity organizations meet a certain level of credibility before being allowed to raise funds.
 
 ## Features
