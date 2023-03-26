@@ -9,7 +9,7 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
 
   // Get the deployed attestation contract
   const attestation: AttestationStation = await deployments.get('AttestationStation');
-  //let attestation = '0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77';
+  // let attestation = '0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77';
   // Get the deployed USDC contract
   const usdc: MockUSDC = await deployments.get('MockUSDC');
 
@@ -17,7 +17,7 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
   const minScore = 50;
 
   // Gnosis safe address
-  const gnosisSafe = '0x9f24e4bc9c4f609706a14ea154b4504c02889c97';
+  const gnosisSafe = '0x9c9EaE71CBc35cfd2457B8C0fdbd167e8229fa3E';
 
   // Deploy Multinate contract
   const multinate = await deploy('Multinate', {

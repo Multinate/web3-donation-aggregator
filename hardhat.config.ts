@@ -88,6 +88,13 @@ module.exports = {
       url: 'https://nd-178-050-667.p2pify.com/6de244435837d2e254f9dacadc307f19',
       chainId: 137,
       accounts: [PRIVATE_KEY],
+      maxFeePerGas: 500000000000,
+      maxPriorityFeePerGas: 40000000000,
+    },
+    gnosis: {
+      url: 'https://rpc.gnosischain.com',
+      chainId: 100,
+      accounts: [PRIVATE_KEY],
     },
     mumbai: {
       url: 'https://rpc-mumbai.maticvigil.com/',

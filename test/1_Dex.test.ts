@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { PancakeFactory, PancakeRouter, MockERC20, MockUSDC, MockWETH } from '../typechain';
+import { PancakeFactory, PancakeRouter, MockERC20, MockUSDC, MockWETH, SwapManager } from '../typechain';
 
 import { BigNumber, BigNumberish } from 'ethers';
 import { deployments, ethers } from 'hardhat';
@@ -12,6 +12,7 @@ describe('Pancake', () => {
   let factory: PancakeFactory;
   let router: PancakeRouter;
   let usdc: MockUSDC;
+  let swapManager: SwapManager;
   let erc20: MockERC20;
   let weth: MockWETH;
   let owner: SignerWithAddress;
@@ -21,21 +22,23 @@ describe('Pancake', () => {
   beforeEach(async () => {
     const signers = await ethers.getSigners();
     [owner, user, other] = signers;
-    await deployments.fixture(['Factory', 'Router', 'MockERC20', 'MockUSDC', 'Mock']);
+    await deployments.fixture(['Factory', 'Router', 'MockERC20', 'MockUSDC', 'Mock', 'SwapManager', 'Multinate']);
     factory = await ethers.getContract('PancakeFactory');
     router = await ethers.getContract('PancakeRouter');
     usdc = await ethers.getContract('MockUSDC');
     erc20 = await ethers.getContract('MockERC20');
     weth = await ethers.getContract('MockWETH');
+    swapManager = await ethers.getContract('SwapManager');
     // Mint 10000 of each token
     await usdc.devMint(ethers.utils.parseUnits('10000000', 18));
     await erc20.devMint(ethers.utils.parseUnits('10000000', 18));
     // Approve router to spend tokens
     await usdc.approve(router.address, ethers.utils.parseUnits('10000000', 18));
     await erc20.approve(router.address, ethers.utils.parseUnits('10000000', 18));
-    // Approve factory to spend tokens
-    await usdc.approve(factory.address, ethers.utils.parseUnits('10000000', 18));
-    await erc20.approve(factory.address, ethers.utils.parseUnits('10000000', 18));
+
+    // Approve swap manager to spend tokens
+    await usdc.approve(swapManager.address, ethers.utils.parseUnits('10000000', 18));
+    await erc20.approve(swapManager.address, ethers.utils.parseUnits('10000000', 18));
   });
 
   it('should add liquidity', async () => {
@@ -68,5 +71,12 @@ describe('Pancake', () => {
       owner.address,
       deadline
     );
+
+    // await swapManager
+    //   .connect(owner)
+    //   .donate(erc20.address, ethers.utils.parseEther('10'), { value: ethers.utils.parseEther('0.01') });
+
+    // // expect baalnce of swapmanager to ve 10
+    // expect(await usdc.balanceOf(swapManager.address)).to.equal(ethers.utils.parseEther('10'));
   });
 });

@@ -11,7 +11,6 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
   const pancakeFactory: PancakeFactory = await deployments.get('PancakeFactory');
   // Get mockWETH contract
   const mockWETH: MockWETH = await deployments.get('MockWETH');
-  console.log('PancakeFactory address: ', pancakeFactory.address);
   await deploy('PancakeRouter', {
     from: deployer,
     log: true,

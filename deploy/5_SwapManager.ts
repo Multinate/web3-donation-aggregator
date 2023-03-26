@@ -32,7 +32,13 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }: any) => {
   // Deploy SwapManager contract
   const swapManager = await deploy('SwapManager', {
     from: deployer,
-    args: [usdc.address, hypUsdcAddr, uniswapRouter.address, multinate.address, chainId],
+    args: [
+      usdc.address,
+      '0x77f359C9e1F5a1264B931fca77523d99a7807b50',
+      uniswapRouter.address,
+      multinate.address,
+      chainId,
+    ],
     log: true,
   });
 };

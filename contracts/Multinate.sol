@@ -2,14 +2,16 @@
 pragma solidity 0.8.15;
 
 import "./interfaces/IAttestationStation.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@hyperlane-xyz/core/interfaces/IMailbox.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Multinate is Ownable {
     IAttestationStation public attestationStation;
     IERC20 public usdc;
     uint256 public minimumAttestationScore;
-
+    address public swapManager;
+    IMailbox mailbox = IMailbox(0x35231d4c2D8B8ADcB5617A638A0c4548684c7C70);
     bytes32 public constant REGISTRATION_KEY = keccak256("registration");
     bytes32 public constant TAX_EXEMPT_STATUS_KEY = keccak256("tax_exempt_status");
     bytes32 public constant FINANCIAL_STATEMENTS_KEY = keccak256("financial_statements");
@@ -40,6 +42,7 @@ contract Multinate is Ownable {
     );
     event CharityEligibilityUpdated(address indexed charity, bool eligible);
     event CampaignFunded(uint256 indexed campaignId, uint256 amount);
+    event Donated(uint32 origin, address indexed donor, uint256 indexed campaignId, uint256 amount);
 
     constructor(address _attestationStation, uint256 _minimumAttestationScore, address _gnosisSafe, address _usdc) {
         attestationStation = IAttestationStation(_attestationStation);
@@ -126,7 +129,7 @@ contract Multinate is Ownable {
         string memory _description,
         uint256 _targetAmount,
         uint256 _deadline
-    ) external onlyOwner {
+    ) external {
         require(isCharityEligible(_charity), "The charity organization is not eligible");
         require(_deadline > block.timestamp, "Deadline must be in the future");
         require(_targetAmount > 0, "Target amount must be greater than zero");
@@ -159,5 +162,39 @@ contract Multinate is Ownable {
         usdc.transfer(campaign.charity, campaign.currentAmount);
         // Emit event
         emit CampaignFunded(_campaignId, campaign.currentAmount);
+    }
+
+    // Handle donations
+    function handle(uint32 _origin, bytes32 _sender, bytes memory _message) external {
+        require(msg.sender == address(mailbox), "Only mailbox can call this function");
+        // Decode the message
+        (address donor, uint256 campaignId, uint256 amount) = abi.decode(_message, (address, uint256, uint256));
+        Campaign storage campaign = campaigns[campaignId];
+        require(campaign.active, "Campaign is not active");
+        require(campaign.currentAmount + amount <= campaign.targetAmount, "Target amount exceeded");
+        require(campaign.deadline > block.timestamp, "Deadline has passed");
+        campaign.currentAmount += amount;
+        // Emit event
+        emit Donated(_origin, donor, campaignId, amount);
+    }
+
+    // Handle donations from the same chain
+    function donate(uint256 _campaignId, uint256 _amount) external {
+        // Require to be swapManager
+        require(msg.sender == swapManager, "Only swapManager can call this function");
+        // Require transfer of USDC tokens
+        require(usdc.transferFrom(msg.sender, address(this), _amount), "USDC transfer failed");
+        Campaign storage campaign = campaigns[_campaignId];
+        require(campaign.active, "Campaign is not active");
+        require(campaign.currentAmount + _amount <= campaign.targetAmount, "Target amount exceeded");
+        require(campaign.deadline > block.timestamp, "Deadline has passed");
+        campaign.currentAmount += _amount;
+        // Emit event
+        emit Donated(137, tx.origin, _campaignId, _amount);
+    }
+
+    // Set swapManager
+    function setSwapManager(address _swapManager) external {
+        swapManager = _swapManager;
     }
 }
